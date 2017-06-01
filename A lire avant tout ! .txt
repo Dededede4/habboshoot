@@ -1,0 +1,19 @@
+Salut !
+Voici les codes sources d'habboshoot du 17/12/2009.
+
+TOUS LES CODES SOURCE SONT SOUS LICENCE GPL.
+
+/!\ LES IMAGES ET LES REFERANCES À HABBO HOTEL SONT © SULAKE.
+
+Tout ce qui est administration poussée se fait dans phpmyadmin.
+Par exemple, pour devenir admin, vous devez aller dans la table membre, et écrire « Admin » à l'emplacement de votre pseudo.
+
+
+Pensez à remplir pass.php avec vos codes de connexion et d'exécuter sql.txt.
+
+(Edit en 2017)
+Le code source n'a pas changé. Mais à l'époque github n'était pas si bien implémenté, et comme j'ai encore une personne par an qui déboule pour me demander le code source, je le publie sur cette plate-forme.
+N'hésitez pas à faire des pull requests !
+Dans le répertoire screens/, il y a 2300 captures d'écrans de meurtres de l'époque. C'est pour le souvenir. Vous pouvez les supprimer avant de le mettre en ligne.
+
+(Je survole le code source et je pleure devant sa mocheté. Ne me jugez pas trop, c'était l'un de mes permiers sites web, j'avais 15 ans : les fautes d'orthographes, le code en français, le code incompréhensible, pas de MVC, pas de traduction, même pas de POO, pas de tests... x') )

@@ -1,0 +1,160 @@
+body
+{
+width: 690px;
+margin: auto;
+padding-top: 5px;
+background-image: url("img/background.gif");
+}
+#haut
+{
+background-image: url("img/haut.gif");
+width: 586px;
+height: 80px;
+padding-top: 151px;
+padding-left: 104px;
+vertical-align: middle;
+}
+#permenuhaux
+{
+background-image: url("img/haut1ermenu.gif");
+width: 213px;
+height: 33px;
+float:left;
+}
+#permenumilieu
+{
+padding: auto;
+background-image: url("img/milieumenu.gif");
+width: 213px;
+min-height : 116px;
+clear: left;
+	font-family:Verdana, Geneva, sans-serif;
+
+	font-size:10px;
+text-align: center;
+	font-style:inherit;
+	font-weight: bold;
+
+}
+#hautmenu
+{
+background-image: url("img/hautmenu.gif");
+width: 213px;
+height: 33px;
+float:left;
+clear: left;
+}
+#basmenu
+{
+background-image: url("img/basmenu.gif");
+width: 213px;
+height: 2px;
+float:left;
+clear: left;
+}
+#blablamilieu
+{
+background-image: url("img/milieublabla.gif");
+width: 477px;
+float:right;
+min-height : 420px;
+font-family:Verdana, Geneva, sans-serif;
+
+	font-size:10px;
+
+	font-style:inherit;
+	color: white;
+	font-weight: bold;
+
+
+clear: right;
+}
+#basblabla
+{
+background-image: url("img/basblabla.gif");
+width: 477px;
+height: 62px;
+float:right;
+clear: right;
+}
+
+#border
+{
+min-height : 420px;
+padding-right: 15px;
+padding-left: 10px;
+}
+
+td
+{
+vertical-align: top;
+
+}
+
+a:link {
+
+	color: #FF9900;
+
+	text-decoration: none;
+
+	font-weight: bold;
+
+	}
+
+a:visited {
+
+	text-decoration: none;
+
+	color: #FF9900;
+
+	font-weight: bold;
+
+}
+
+a:hover {
+
+	text-decoration: underline;
+
+	color: #FF6600;
+
+	font-weight: bold;
+
+}
+
+a:active {
+
+	text-decoration: none;
+
+	color: #FF9900;
+
+	font-weight: bold;
+
+}
+
+
+
+/* Si JS activé */
+div.secret div.secret1 {
+/* Avec JS activé, on masque par défaut */
+	display: none;
+}
+
+/* JS est désactivé */
+
+body.nojs div.secret div.secret1 {
+/* Par défaut, on affiche au cas ou on a pas JS activé */
+	display: block;
+}
+
+div.secret div.secret1 {
+	display: none;
+}
+
+/* Dans tous les cas */
+div.secretshow div.secret1 {
+	display: block;
+}
+
+div.secrethide div.secret1 {
+	display: none;
+}

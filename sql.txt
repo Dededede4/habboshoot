@@ -1,0 +1,365 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.3deb1ubuntu1.3
+-- http://www.phpmyadmin.net
+--
+-- Serveur: localhost
+-- Généré le : Jeu 17 Décembre 2009 à 18:20
+-- Version du serveur: 5.0.51
+-- Version de PHP: 5.2.4-2ubuntu5.7
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Base de données: `habboshoot`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `badges`
+--
+
+CREATE TABLE IF NOT EXISTS `badges` (
+  `id` int(11) NOT NULL auto_increment,
+  `pseudo` text NOT NULL,
+  `url` text NOT NULL,
+  `blabla` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=53 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `ban`
+--
+
+CREATE TABLE IF NOT EXISTS `ban` (
+  `pseudo` text NOT NULL,
+  `time` text NOT NULL,
+  `reson` text NOT NULL,
+  `ip` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `chat`
+--
+
+CREATE TABLE IF NOT EXISTS `chat` (
+  `id` int(11) NOT NULL auto_increment,
+  `pseudo` text NOT NULL,
+  `message` text NOT NULL,
+  `time` int(11) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2482 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `chat_chut`
+--
+
+CREATE TABLE IF NOT EXISTS `chat_chut` (
+  `id` int(11) NOT NULL auto_increment,
+  `pseudo` text NOT NULL,
+  `time` int(11) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `commentaires`
+--
+
+CREATE TABLE IF NOT EXISTS `commentaires` (
+  `id` int(11) NOT NULL auto_increment,
+  `pseudo` varchar(50) NOT NULL,
+  `message` text NOT NULL,
+  `time` int(20) NOT NULL,
+  `id_news` int(11) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=99 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `contest`
+--
+
+CREATE TABLE IF NOT EXISTS `contest` (
+  `ID` int(11) NOT NULL auto_increment,
+  `ID_reponce` int(11) NOT NULL,
+  `msg` text NOT NULL,
+  `auteur` text NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11979 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `forum`
+--
+
+CREATE TABLE IF NOT EXISTS `forum` (
+  `ID` int(11) NOT NULL auto_increment,
+  `ID_reponce` int(11) NOT NULL,
+  `sujet` text NOT NULL,
+  `msg` text NOT NULL,
+  `auteur` text NOT NULL,
+  `time` int(11) NOT NULL,
+  `time_d` int(11) NOT NULL,
+  `auteur_d` text NOT NULL,
+  `categorie` text NOT NULL,
+  `vus` text NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11025 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `ip`
+--
+
+CREATE TABLE IF NOT EXISTS `ip` (
+  `id` int(11) NOT NULL auto_increment,
+  `ip` text NOT NULL,
+  `time` int(11) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=721 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `membres`
+--
+
+CREATE TABLE IF NOT EXISTS `membres` (
+  `id` int(11) NOT NULL auto_increment,
+  `pseudo` varchar(444) NOT NULL,
+  `pass` varchar(444) NOT NULL,
+  `cash` int(11) NOT NULL,
+  `statu` varchar(10) NOT NULL,
+  `ip` varchar(444) NOT NULL,
+  `datein` varchar(444) NOT NULL,
+  `dateco` varchar(444) NOT NULL,
+  `description` varchar(500) NOT NULL default 'Aucune',
+  `meutre` int(11) NOT NULL,
+  `meutreparty` int(11) NOT NULL,
+  `pv` int(11) NOT NULL,
+  `balles` int(11) NOT NULL,
+  `miseaprix` int(11) NOT NULL,
+  `couteau` int(11) NOT NULL,
+  `pareballes` int(11) NOT NULL,
+  `parrin` text NOT NULL,
+  `id_clan` int(11) NOT NULL,
+  `votes` text NOT NULL,
+  PRIMARY KEY  (`id`),
+  KEY `index_pseudo` (`pseudo`(333))
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5709 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `message`
+--
+
+CREATE TABLE IF NOT EXISTS `message` (
+  `ID` int(11) NOT NULL auto_increment,
+  `pseudo` varchar(444) NOT NULL,
+  `message` text NOT NULL,
+  `lancer` text NOT NULL,
+  `lut` text NOT NULL,
+  `time` text NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=437 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `messagerie`
+--
+
+CREATE TABLE IF NOT EXISTS `messagerie` (
+  `ID` int(11) NOT NULL auto_increment,
+  `pseudo` varchar(444) NOT NULL,
+  `message` text NOT NULL,
+  `lancer` text NOT NULL,
+  `sujet` text NOT NULL,
+  `time` text NOT NULL,
+  PRIMARY KEY  (`ID`),
+  KEY `index_pseudo` (`pseudo`(333))
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=414 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `message_fiche`
+--
+
+CREATE TABLE IF NOT EXISTS `message_fiche` (
+  `id` int(11) NOT NULL auto_increment,
+  `pseudo` text NOT NULL,
+  `pseudo_fiche` text NOT NULL,
+  `message` text NOT NULL,
+  `time` int(11) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2924 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `miseprix`
+--
+
+CREATE TABLE IF NOT EXISTS `miseprix` (
+  `ID` int(11) NOT NULL auto_increment,
+  `tete` text NOT NULL,
+  `acheteur` text NOT NULL,
+  `prix` int(11) NOT NULL,
+  `time` int(11) NOT NULL,
+  `zigouiller` text NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `msg`
+--
+
+CREATE TABLE IF NOT EXISTS `msg` (
+  `id` int(11) NOT NULL auto_increment,
+  `message` text NOT NULL,
+  `motkill` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `msg_log`
+--
+
+CREATE TABLE IF NOT EXISTS `msg_log` (
+  `id` int(11) NOT NULL auto_increment,
+  `pseudo` text NOT NULL,
+  `time` int(11) NOT NULL,
+  `ip` text NOT NULL,
+  `message` text NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=276 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `news`
+--
+
+CREATE TABLE IF NOT EXISTS `news` (
+  `id` int(11) NOT NULL auto_increment,
+  `titre` text NOT NULL,
+  `blabla` text NOT NULL,
+  `time` int(11) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `roomdead`
+--
+
+CREATE TABLE IF NOT EXISTS `roomdead` (
+  `id` int(11) NOT NULL auto_increment,
+  `titre` text NOT NULL,
+  `proprio` text NOT NULL,
+  `screen` text NOT NULL,
+  `score` int(11) NOT NULL,
+  `score-partie` int(11) NOT NULL,
+  `timecrea` int(11) NOT NULL,
+  `timelimit` int(11) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `screen`
+--
+
+CREATE TABLE IF NOT EXISTS `screen` (
+  `ID` int(11) NOT NULL auto_increment,
+  `adresse` text NOT NULL,
+  `killeur` text NOT NULL,
+  `victime` text NOT NULL,
+  `time` int(11) NOT NULL,
+  `valid` text NOT NULL,
+  `couteau` varchar(100) NOT NULL,
+  `gain` int(11) NOT NULL default '8',
+  `cagoule` text NOT NULL,
+  `duel` text NOT NULL,
+  `motkill` text NOT NULL,
+  `valideur` text NOT NULL,
+  `giletparballe` text NOT NULL,
+  `id_map` text NOT NULL,
+  `votes_pour` text NOT NULL,
+  `votes_contre` text NOT NULL,
+  PRIMARY KEY  (`ID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15915 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `screen_post`
+--
+
+CREATE TABLE IF NOT EXISTS `screen_post` (
+  `nom` text NOT NULL,
+  `time` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `trafic`
+--
+
+CREATE TABLE IF NOT EXISTS `trafic` (
+  `id` int(11) NOT NULL auto_increment,
+  `arbitre` text NOT NULL,
+  `achat_magasin` text NOT NULL,
+  `motif` text NOT NULL,
+  `id_donneur` int(11) NOT NULL,
+  `id_reseveur` int(11) NOT NULL,
+  `pseudo_donneur` text NOT NULL,
+  `pseudo_reseveur` text NOT NULL,
+  `somme` int(11) NOT NULL,
+  `time` int(11) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6013 ;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tresort`
+--
+
+CREATE TABLE IF NOT EXISTS `tresort` (
+  `somme` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tresort_vente`
+--
+
+CREATE TABLE IF NOT EXISTS `tresort_vente` (
+  `id` int(11) NOT NULL auto_increment,
+  `somme_mago` int(11) NOT NULL,
+  `pseudo_acheteur` text NOT NULL,
+  `time` int(11) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
